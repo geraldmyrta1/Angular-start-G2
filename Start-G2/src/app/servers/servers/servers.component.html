@@ -1,0 +1,30 @@
+<div class="container-fluid m-5">
+  <div class="row">
+    <p>servers works!</p>
+    <h2>The server has the number: {{serverNumber}}</h2>
+  </div>
+  <input type="text"
+         class="form-control"
+         (input)="onUpdateServer($event)"
+  >
+  <br>
+  <h2>The server has the name: {{serverName}}</h2>
+  <br>
+  <label>Using ngModel:</label>
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="serverName"
+  >
+  <button
+    [disabled]="isDisabled"
+    type="button"
+    class="btn btn-primary"
+    (click)="onCreateServer($event)"
+  >Add Server</button>
+  {{serverCreationStatus}}
+  <br>
+  <img alt="test" width="300px" [src]="imgUrl">
+  <td [colSpan]="serverNumber"></td>
+  <td [attr.colspan]="serverNumber"></td>
+</div>
